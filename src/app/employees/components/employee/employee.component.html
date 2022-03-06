@@ -1,0 +1,61 @@
+<mat-toolbar>
+    <span class="fill-remaining-space"></span>
+    <span>{{form.controls['$key'].value ? 'Editar Empleado' : 'Nuevo Empleado'}}</span>
+    <span class="fill-remaining-space"></span>
+    <button #tooltip="matTooltip" matTooltip="Cerrar" tabindex="-1" mat-icon-button (click)="closeDialog()">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-toolbar>
+<form mat-dialog-content (ngSubmit)="onSubmit()" [formGroup]="form" class="normal-form">
+
+    <div class="controls-container">
+        <input type="hidden" formControlName="$key">
+        <mat-form-field>
+            <input matInput placeholder="Full Name" type="text" formControlName="fullName">
+            <mat-error>{{fullNameErrorMsg}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Email" type="text" formControlName="email">
+            <mat-error>{{emailErrorMsg}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Phone" type="text" formControlName="phone">
+            <mat-error>{{phoneErrorMsg}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="City" type="text" formControlName="city">
+            <mat-error>{{cityErrorMsg}}</mat-error>
+        </mat-form-field>
+        </div>
+    <div class="controls-container">
+        <div class="add-bottom-padding">
+            <mat-radio-group formControlName="gender">
+                <mat-radio-button value="F">Female</mat-radio-button>
+                <mat-radio-button value="M">Male</mat-radio-button>
+                <mat-radio-button value="O">Other</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <mat-form-field>
+            <mat-select formControlName="department" placeholder="Department">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let dep of departments" [value]="dep.$key">
+                    {{dep.code}} - {{dep.name}}
+                </mat-option>
+            </mat-select>
+            <mat-error>You must make a selection</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" formControlName="hireDate" placeholder="Hire Date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error>{{hireDateErrorMsg}}</mat-error>
+        </mat-form-field>
+        <div class="add-bottom-padding">
+            <mat-checkbox color="primary" formControlName="isPermanent">Permanent Employee</mat-checkbox>
+        </div>
+        <div mat-dialog-actions class="button-row">
+            <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+            <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Submit</button>
+        </div>
+    </div>
+</form>

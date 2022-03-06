@@ -1,0 +1,26 @@
+h2 {
+  margin: 0;
+}
+img {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px 1px #00000062;
+}
+.details,
+.details-info {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.details-info {
+  padding: 0;
+}
+
+.details-title {
+  font-size: 20px;
+}
+.details-subtitle {
+  font-size: 14px;
+}

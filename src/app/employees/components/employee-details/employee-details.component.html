@@ -1,0 +1,26 @@
+<mat-toolbar>
+    <span class="fill-remaining-space"></span>
+    <span>Details Employee</span>
+    <span class="fill-remaining-space"></span>
+    <button #tooltip="matTooltip" matTooltip="Cerrar" tabindex="-1" mat-icon-button (click)="closeDialog()">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-toolbar>
+<div class="details">
+    <div class="details-header">
+        <h2 class="details-title">{{data.fullName}}</h2>
+        <span class="details-subtitle">{{data.departmentName}}</span>
+    </div>
+    <div class="details-img">
+        <img src="{{data | image}}" alt="">
+    </div>
+    <div class="details-info">
+        <span>City: <span class="bold">{{data.city}}</span></span>
+        <span>Email: <span class="bold">{{data.email}}</span></span>
+        <span>Gender: <span class="bold">{{(data.gender === 'M') ? 'Male': (data.gender === 'F') ? 'Female' : 'Other'}}</span></span>
+        <span>Phone: <span class="bold">{{data.phone}}</span></span>
+        <span>Hire date: <span class="bold">{{data.hireDate | date : 'mediumDate'}}</span></span>
+        <span>Status: <span class="bold">{{data.isPermanent ? 'Permanent Employee' : 'Not Permanent
+                Employee'}}</span></span>
+    </div>
+</div>

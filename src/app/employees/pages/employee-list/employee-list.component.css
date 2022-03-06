@@ -1,0 +1,137 @@
+.table-container {
+  margin: 10px auto;
+  width: 75%;
+}
+
+td.mat-cell:first-of-type,
+th.mat-header-cell:first-of-type {
+  padding-left: 0;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 75%;
+  padding: 15px 0;
+}
+
+.search-container button {
+  flex: 1;
+  margin-right: calc(15px + 0.25em);
+}
+.search-container mat-form-field {
+  flex: 11;
+}
+
+table {
+  width: 100%;
+  padding: 0 2%;
+}
+
+.hide {
+  display: none;
+}
+
+.loading {
+  font-style: italic;
+  text-align: center;
+}
+
+.btn-edit {
+  color: #ffd740;
+}
+.btn-details {
+  color: #69f0ae;
+}
+
+.mat-table .mat-cell:last-child {
+  padding: 0;
+}
+
+@media screen and (max-width: 960px) {
+  .table-container {
+    width: 90%;
+    overflow-x: scroll;
+  }
+
+  .search-container {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .mat-table {
+    border: 0;
+    vertical-align: middle;
+    width: 100%;
+    padding: 0 4%;
+  }
+
+  .mat-table caption {
+    font-size: 1em;
+  }
+
+  .mat-header-row {
+    display: none;
+  }
+
+  .mat-table .mat-row {
+    border-bottom: thin dashed #3f51b5;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .search-container button {
+    width: 100%;
+    flex: 1;
+    margin: 0 0 calc(15px + 0.25em) 0;
+  }
+
+  .search-container mat-form-field {
+    width: 100%;
+    flex: 1;
+  }
+
+  .mat-table .mat-cell {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 1em;
+    text-align: right;
+    font-weight: bold;
+    height: 30px;
+    margin-top: 4%;
+  }
+
+  .mat-table .mat-cell:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 500;
+
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  .mat-table .mat-cell:last-child {
+    border-bottom: 0;
+    margin: 0 0 4% 0;
+    padding: 0;
+  }
+
+  .mat-table .mat-cell:first-child {
+    margin-top: 4%;
+  }
+}
+
+@media (max-width: 360px) {
+  .table-container {
+    width: 95%;
+    overflow-x: scroll;
+  }
+
+  .search-container {
+    width: 95%;
+    flex-direction: column;
+  }
+}

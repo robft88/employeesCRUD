@@ -1,0 +1,9 @@
+<div>
+    <div class="content-container">
+        <mat-icon id="close-icon" (click)="closeConfirm()">close</mat-icon>
+        <span class="content-span full-width">Are you sure to delete: <span class="bold">"{{data.fullName}}"</span>
+            ?</span>
+    </div>
+    <button mat-flat-button id="btn-cancel" [matDialogClose]="false">cancel</button>
+    <button mat-flat-button id="btn-confirm" [matDialogClose]="true">confirm</button>
+</div>

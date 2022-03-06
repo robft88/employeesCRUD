@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "crudapp-14484": {
+      "hosting": {
+        "employeesCrud": [
+          "crudapp-14484"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "crudapp-14484"
+  }
+}
